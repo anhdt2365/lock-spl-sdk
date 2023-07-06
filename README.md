@@ -37,9 +37,9 @@ const timestamp = "1688482813"
 const tx = await lockSplClient.lock(
     wallet.publicKey,
     mint,
-    vaultIndex,
-    lockAmount.toString();
-    timestamp
+    DecimalUtil.toBN(new Decimal(vaultIndex)),
+    DecimalUtil.toBN(new Decimal(lockAmount)),
+    DecimalUtil.toBN(new Decimal(timestamp)),
 );
 
 const txSignature = await tx.buildAndExecute();
