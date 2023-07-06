@@ -26,9 +26,9 @@ export class LockSplClient {
     public async lock(
         user: PublicKey,
         mint: PublicKey,
-        index: number,
-        amount: string,
-        releaseTimestamp: string
+        index: anchor.BN,
+        amount: anchor.BN,
+        releaseTimestamp: anchor.BN
     ): Promise<TransactionBuilder> {
         const vault = this.pda.vault(mint, index);
 
@@ -68,7 +68,7 @@ export class LockSplClient {
 
     public async changeDestination(
         mint: PublicKey,
-        index: number,
+        index: anchor.BN,
         newDestination: PublicKey,
     ): Promise<TransactionBuilder> {
         const vault = this.pda.vault(mint, index);
@@ -91,7 +91,7 @@ export class LockSplClient {
     public async unlock(
         user: PublicKey,
         mint: PublicKey,
-        index: number,
+        index: anchor.BN,
     ): Promise<TransactionBuilder> {
         const vault = this.pda.vault(mint, index);
 
@@ -128,7 +128,7 @@ export class LockSplClient {
     public async getVaultByUserIndex(
         user: PublicKey,
         mint: PublicKey,
-        index: number
+        index: anchor.BN
     ): Promise<VaultData> {
         const pda = new PDA(this.ctx.program.programId);
         const vault = pda.vault(mint, index);

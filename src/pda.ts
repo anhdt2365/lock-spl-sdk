@@ -16,9 +16,9 @@ export class PDA {
         this.programId = programId;
     }
 
-    vault = (mint: PublicKey, index: number): PDAInfo => {
+    vault = (mint: PublicKey, index: anchor.BN): PDAInfo => {
         const [pda, bump] = PublicKey.findProgramAddressSync(
-            [anchor.utils.bytes.utf8.encode(VAULT_SEED), mint.toBuffer(), new anchor.BN(index).toBuffer('le', 1)],
+            [anchor.utils.bytes.utf8.encode(VAULT_SEED), mint.toBuffer(), index.toBuffer('le', 1)],
             this.programId,
         );
         return {

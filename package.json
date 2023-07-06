@@ -1,7 +1,7 @@
 {
     "name": "@remitano-anhdt/lock-spl-sdk",
-    "version": "0.0.1",
-    "description": "Typescript SDK to interact with Kyc program.",
+    "version": "0.0.2",
+    "description": "Typescript SDK to interact with Lock SPL program.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "repository": {

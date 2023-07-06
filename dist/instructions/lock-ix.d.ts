@@ -1,6 +1,6 @@
 import { Instruction } from "@orca-so/common-sdk";
 import { PublicKey } from "@solana/web3.js";
-import { Program } from "@project-serum/anchor";
+import { BN, Program } from "@project-serum/anchor";
 import { LockSpl } from "../artifacts/lock-spl";
 export declare type LockParams = {
     accounts: {
@@ -11,10 +11,10 @@ export declare type LockParams = {
         mint: PublicKey;
     };
     inputs: {
-        index: number;
+        index: BN;
         destination: PublicKey;
-        amount: string;
-        releaseTimestamp: string;
+        amount: BN;
+        releaseTimestamp: BN;
     };
 };
 export declare function lock(program: Program<LockSpl>, params: LockParams): Promise<Instruction>;
