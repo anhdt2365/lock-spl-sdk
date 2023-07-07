@@ -54,7 +54,7 @@ export type LockSpl = {
             "args": [
                 {
                     "name": "index",
-                    "type": "u8"
+                    "type": "string"
                 },
                 {
                     "name": "destination",
@@ -154,7 +154,7 @@ export type LockSpl = {
                     },
                     {
                         "name": "index",
-                        "type": "u8"
+                        "type": "string"
                     },
                     {
                         "name": "destination",
@@ -203,13 +203,18 @@ export type LockSpl = {
         },
         {
             "code": 6004,
+            "name": "InsufficientBalance",
+            "msg": "Insufficient balance"
+        },
+        {
+            "code": 6005,
             "name": "InvalidDestinationTokenAccount",
             "msg": "Invalid destination token account"
         },
         {
-            "code": 6005,
-            "name": "InsufficientBalance",
-            "msg": "Insufficient balance"
+            "code": 6006,
+            "name": "InvalidVaultIndex",
+            "msg": "Invalid vault index"
         }
     ]
 };
@@ -270,7 +275,7 @@ export const IDL: LockSpl = {
             "args": [
                 {
                     "name": "index",
-                    "type": "u8"
+                    "type": "string"
                 },
                 {
                     "name": "destination",
@@ -370,7 +375,7 @@ export const IDL: LockSpl = {
                     },
                     {
                         "name": "index",
-                        "type": "u8"
+                        "type": "string"
                     },
                     {
                         "name": "destination",
@@ -419,13 +424,18 @@ export const IDL: LockSpl = {
         },
         {
             "code": 6004,
+            "name": "InsufficientBalance",
+            "msg": "Insufficient balance"
+        },
+        {
+            "code": 6005,
             "name": "InvalidDestinationTokenAccount",
             "msg": "Invalid destination token account"
         },
         {
-            "code": 6005,
-            "name": "InsufficientBalance",
-            "msg": "Insufficient balance"
+            "code": 6006,
+            "name": "InvalidVaultIndex",
+            "msg": "Invalid vault index"
         }
     ]
 };

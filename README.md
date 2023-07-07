@@ -29,7 +29,7 @@ const lockSplClient = await LockSplClient.getClient(ctx);
 
 const mint = new PublicKey("mint-address");
 // BE manage the vaultIndex for each user with a particular Mint
-const vaultIndex = 1;
+const vaultIndex = "oRaQYiERvWFquq8A3dfJ";
 const lockAmount = 100 * LAMPORTS_PER_SOL;
 // GMT Tuesday, July 4, 2023 3:00:13 PM
 const timestamp = "1688482813"
@@ -37,7 +37,7 @@ const timestamp = "1688482813"
 const tx = await lockSplClient.lock(
     wallet.publicKey,
     mint,
-    DecimalUtil.toBN(new Decimal(vaultIndex)),
+    vaultIndex,
     DecimalUtil.toBN(new Decimal(lockAmount)),
     DecimalUtil.toBN(new Decimal(timestamp)),
 );
@@ -53,7 +53,7 @@ console.log("vaultDataGetByUser", vaultDataGetByUser);
 vaultDataGetByUser: {
     bump: 255,
     tokenBump: 255,
-    index: 1,
+    index: "oRaQYiERvWFquq8A3dfJ",
     destination: PublicKey [PublicKey(EPitmoo9Q8SEJmxneECDbbUvidkCvx3Y28dDS6fmMMog)] {
         _bn: <BN: c6fa1374119338ace09fffba0660c6dbd813dd37cf70d12aa3689a014b547ec3>
     },

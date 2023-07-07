@@ -8,5 +8,5 @@ export interface PDAInfo {
 export declare class PDA {
     readonly programId: PublicKey;
     constructor(programId: PublicKey);
-    vault: (mint: PublicKey, index: anchor.BN) => PDAInfo;
+    vault: (mint: PublicKey, index: string) => PDAInfo;
 }

@@ -11,7 +11,7 @@ export declare type LockParams = {
         mint: PublicKey;
     };
     inputs: {
-        index: BN;
+        index: string;
         destination: PublicKey;
         amount: BN;
         releaseTimestamp: BN;

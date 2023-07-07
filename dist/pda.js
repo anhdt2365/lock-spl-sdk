@@ -31,7 +31,10 @@ exports.VAULT_TOKEN_SEED = "vault_token";
 class PDA {
     constructor(programId) {
         this.vault = (mint, index) => {
-            const [pda, bump] = web3_js_1.PublicKey.findProgramAddressSync([anchor.utils.bytes.utf8.encode(exports.VAULT_SEED), mint.toBuffer(), index.toArrayLike(Buffer, 'le', 1)], this.programId);
+            if (index.length != 20) {
+                throw Error("Invalid vault index length");
+            }
+            const [pda, bump] = web3_js_1.PublicKey.findProgramAddressSync([anchor.utils.bytes.utf8.encode(exports.VAULT_SEED), mint.toBuffer(), anchor.utils.bytes.utf8.encode(index)], this.programId);
             return {
                 key: pda,
                 bump: bump,

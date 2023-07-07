@@ -8,9 +8,9 @@ export declare class LockSplClient {
     pda: PDA;
     constructor(ctx: Context, pda: PDA);
     static getClient(ctx: Context): Promise<LockSplClient>;
-    lock(user: PublicKey, mint: PublicKey, index: anchor.BN, amount: anchor.BN, releaseTimestamp: anchor.BN): Promise<TransactionBuilder>;
-    changeDestination(mint: PublicKey, index: anchor.BN, newDestination: PublicKey): Promise<TransactionBuilder>;
-    unlock(user: PublicKey, mint: PublicKey, index: anchor.BN): Promise<TransactionBuilder>;
-    getVaultByUserIndex(user: PublicKey, mint: PublicKey, index: anchor.BN): Promise<VaultData>;
+    lock(user: PublicKey, mint: PublicKey, index: string, amount: anchor.BN, releaseTimestamp: anchor.BN): Promise<TransactionBuilder>;
+    changeDestination(mint: PublicKey, index: string, newDestination: PublicKey): Promise<TransactionBuilder>;
+    unlock(user: PublicKey, mint: PublicKey, index: string): Promise<TransactionBuilder>;
+    getVaultByUserIndex(user: PublicKey, mint: PublicKey, index: string): Promise<VaultData>;
     getOneVault(vault: PublicKey): Promise<VaultData>;
 }

@@ -13,7 +13,7 @@ export type LockParams = {
         mint: PublicKey;
     };
     inputs: {
-        index: BN;
+        index: string;
         destination: PublicKey;
         amount: BN;
         releaseTimestamp: BN;
@@ -27,7 +27,7 @@ export async function lock(
     const { accounts, inputs } = params;
 
     const ix = await program.methods.lock(
-        inputs.index.toNumber(),
+        inputs.index,
         inputs.destination,
         inputs.amount,
         inputs.releaseTimestamp,
